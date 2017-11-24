@@ -16,23 +16,29 @@
             //做一些异步操作
             setTimeout(function() {
                 console.log('执行完成');
-                resovle(1);
-                // reject('出错了哈')
+                // resovle(1);
+                reject('出错了哈')
             }, 2000);
         });
         return p;
     };
-    runAsync().then(function(data){
-        console.log(data);
-        return data+1;
-    })
-    .then(response=>{
-        console.log(response);
-        return response+1;
-    })
-    .catch((erro)=>{
-        console.log(erro)
-    })
+    // runAsync().then(function(data){
+    //     console.log(data);
+    //     return data+1;
+    // })
+    // .then(response=>{
+    //     console.log(response);
+    //     return response+1;
+    // })
+    // .catch((erro)=>{
+    //     console.log(erro)
+    // })
+    runAsync().then((data)=>{
+        console.log(data)
+    },(e)=>{
+        console.log(e);
+    }
+    )
     const isEven =n=> n%2 ==0;
     //Promise的构造函数接收一个参数，是函数，并且传入两个参数：resolve，reject，分别表示异步操作执行成功后的回调函数和异步操作执行失败后的回调函数。其实这里用“成功”和“失败”来描述并不准确，按照标准来讲，resolve是将Promise的状态置为fullfiled，reject是将Promise的状态置为rejected。不过在我们开始阶段可以先这么理解，后面再细究概念。
 </script>
