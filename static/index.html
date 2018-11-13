@@ -10,7 +10,25 @@
     
 </body>
 <script>
-   
+//     var _resolve = null
+//     var promise = new Promise(resolve=>{
+//         _resolve = resolve
+//     })
+//     var obj = {
+//         set name(val) {
+//             console.log(val)
+//             val && _resolve()
+//         },
+//         get name() {
+            
+//         }
+//     }
+//     promise.then(res=>{
+//         console.log(123123)
+//     })
+//     setTimeout(() => {
+//         obj.name = true
+//     }, 1000);
     function runAsync (){
         var p = new Promise(function(resovle,reject){
             //做一些异步操作
